@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: #181a1b;
+}
+
+.main{
+    background-color: #03130f;
+    color: #c3c1bc;
+    margin: 100px auto;
+    width: 90%;
+    height: 400px;
+}
+
+h1{
+    text-align: center;
+    padding: 50px 0;
+}
+
+#loginform{
+    margin: 20px auto 0;
+    display: inline-block;
+    width: 500px;
+}
+
+label{
+    display: inline-block;
+    width: 140px;
+    height: 25px;    
+}
