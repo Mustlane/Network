@@ -1,0 +1,33 @@
+        <header id="header">
+            <img src="/logo/M_letter_v01.svg" alt="logo" id="logo">
+            <div id="userinfo">
+                <ul id="userinfo_support">
+                    <li>
+                        <a href="/upload">Upload</a>
+                    </li>
+                    <li>
+                        <a href="/invites">Invite</a>
+                    </li>
+                    <li>
+                        <a href="/donations">Donate (<%= donatePercentage %>%) </a>
+                    </li>
+                    <li>
+                        <a href="/staff">Staff</a>
+                    </li>
+                </ul>
+                <ul id="userinfo_stats">
+                    <li>
+                        <a href="">Up:</a>
+                        <span><%= info.up %>MB</span>
+                    </li>
+                    <li>
+                        <a href="">Down:</a>
+                        <span><%= info.down %>MB</span>
+                    </li>
+                    <li>
+                        <a href="">Ratio:</a>
+                        <span><%= info.ratio %></span>
+                    </li>
+                </ul>
+            </div>
+        </header>

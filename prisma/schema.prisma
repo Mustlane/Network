@@ -1,0 +1,118 @@
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+
+model User {
+  id              String       @id @default(uuid())
+  username        String       @unique @db.VarChar(20)
+  password        String
+  parent          Family[]     @relation("parentRelation")
+  child           Family[]     @relation("childRelation")
+  requests        Requests[]
+  lastSeen        DateTime     @default(now())
+  hasJellyfin     Boolean      @default(false)
+  hasSymphonium   Boolean      @default(false)
+  hasImmich       Boolean      @default(false)
+  files      File[]
+  folders    Folder[]
+
+}
+
+model Family {
+  id            String      @id @default(uuid())
+  parentId      String
+  parent        User        @relation("parentRelation", fields: [parentId], references: [id])
+  childId       String
+  child         User        @relation("childRelation", fields: [childId], references: [id])
+}
+
+model File {
+  id         String   @id @default(uuid())
+  name       String   @db.VarChar(100)
+  uploadedAt DateTime @default(now())
+  owner      User     @relation(fields: [ownerId], references: [id])
+  ownerId    String
+  folder     Folder?  @relation(fields: [folderId], references: [id])
+  folderId   String?
+  url        String
+  size       Int?
+}
+
+model Folder {
+  id         String   @id @default(uuid())
+  name       String   @db.VarChar(100)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  owner      User     @relation(fields: [ownerId], references: [id])
+  ownerId    String
+  files      File[]
+  comment    String?  @db.VarChar(500)
+  public     Boolean  @default(false)
+}
+
+model Stats {
+  id              Int     @id @default(autoincrement())
+// Global
+  maxUsers        Int     @default(0)
+  enabledUsers    Int     @default(0)
+  currentUsers    Int     @default(0)
+  thisDayUsers    Int     @default(0)
+  thisWeekUsers   Int     @default(0)
+  thisMonthUsers  Int     @default(0)
+  requests        Int     @default(0)
+  requestsDone    Int     @default(0)
+// Movies
+  movies          Int     @default(0)
+// Series
+  series          Int     @default(0)
+// Music
+  artists         Int     @default(0)
+  albums          Int     @default(0)
+// Books
+  authors         Int     @default(0)
+  books           Int     @default(0)
+// Torrent
+  qbitUploadedSize    BigInt  @default(0)
+  qbitDownloadedSize  BigInt  @default(0)
+  qbitRealRatio       Int     @default(0)
+  qbitTorrents        Int     @default(0)
+  qbitSnatched        Int     @default(0)
+  qbitStalled         Int     @default(0)
+  qbitSeeding         Int     @default(0)
+  qbitRatio           Float   @default(0)
+  qbitRatioAbsolute   Float   @default(0)
+
+// Server
+  spaceTaken          BigInt  @default(0)
+}
+
+model Requests {
+  id        String    @id @default(uuid())
+  authorId  String
+  author    User      @relation( fields: [authorId], references: [id])
+  text      String
+  created   DateTime  @default(now())
+  isDone    Boolean   @default(false)
+}
+
+model Session {
+  id          String   @id
+  sid         String   @unique
+  data        String
+  expiresAt   DateTime
+}

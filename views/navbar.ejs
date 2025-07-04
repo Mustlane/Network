@@ -1,0 +1,61 @@
+        <div id="navbar">
+            <div id="menu">
+                <ul>
+                    <li id="Containers" class="dropdown">
+                        <a class="dropbtn">Containers</a>
+                        <div class="dropdown_content">
+                            <a href="https://jellyfin.mustlane.com">Jellyfin</a>
+                            <a href="https://mustlane.com">Jellyseer</a>
+                            <a href="https://mustlane.com">Immich</a>
+                    </li>
+                    <li id="Requests">
+                        <a href="">Requests</a>
+                    </li>
+                    <li id="Rules">
+                        <a href="">Rules</a>
+                    </li>
+                    <li id="Support">
+                        <a href="">Support</a>
+                    </li>
+                    <li id="Username" class="dropdown">
+                        <a href=""> <%= username %> </a>
+                        <div class="dropdown_content">
+                            <a href="/profile">Profile</a>
+                            <a href="">Settings</a>
+                            <a href="">Log Out</a>
+                        </div>
+                    </li>
+                    <li id="burger_li" class="dropdown">
+                        <img src="/Media/Media_Global/iconamoon--arrow-down-2.svg" id="burger">
+                   </li>
+                </ul>
+            </div>
+            <div id="searchbars">
+                <ul>
+                    <% if(hasJellyfin) { %>
+                    <li>
+                        <input id="Movies" placeholder="Movies">
+                    </li>
+                    <li>
+                        <input id="Series" placeholder="Series">
+                    </li>
+                    <% } %>
+                    <% if(hasSymphonium) { %>
+                    <li>
+                        <input id="Music" placeholder="Music">
+                    </li>
+                    <% } %>
+                    <% if(hasImmich) { %>
+                    <li>
+                        <input id="Images" placeholder="Images">
+                    </li>
+                    <% } %>
+                    <li>
+                        <input id="Requests" placeholder="Requests">
+                    </li>
+                    <li>
+                        <input id="Users" placeholder="Users">
+                    </li>
+                </ul>
+            </div>
+        </div>

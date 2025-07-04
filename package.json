@@ -1,0 +1,64 @@
+{
+  "name": "network",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mustlane/Network.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mustlane/Network/issues"
+  },
+  "homepage": "https://github.com/Mustlane/Network#readme",
+  "dependencies": {
+    "@prisma/client": "^6.11.0",
+    "@quixo3/prisma-session-store": "^3.1.13",
+    "@types/bcrypt": "^5.0.2",
+    "@types/ejs": "^3.1.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.0.3",
+    "@types/qbittorrent-api-v2": "^1.2.3",
+    "@types/qs": "^6.14.0",
+    "axios": "^1.10.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "crypto-random-string": "^5.0.0",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.5.0",
+    "du": "^1.0.0",
+    "ejs": "^3.1.10",
+    "ejs-lint": "^2.0.1",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.2.1",
+    "fs-extra": "^11.3.0",
+    "multer": "^2.0.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.16.0",
+    "prisma": "^6.9.0",
+    "qbittorrent-api-v2": "^1.2.2",
+    "qs": "^6.14.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/du": "^1.0.3",
+    "@types/express": "^5.0.3",
+    "@types/express-session": "^1.18.2",
+    "@types/multer": "^2.0.0",
+    "@types/passport": "^1.0.17",
+    "@types/passport-local": "^1.0.38",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2"
+  }
+}

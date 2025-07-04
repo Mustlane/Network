@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log In</title>
+</head>
+<body>
+  <h1>Create Folder</h1>
+<form action="/profile/folders/create" method="post">
+      <label for="folderName">Folder name:</label>
+      <input id="folderName" name="folderName" placeholder="folder name" type="text" />
+      <br>
+      <label for="comment">Comment:</label>
+      <input id="comment" name="comment" placeholder="comment" type="text" />
+      <button type="submit">Submit</button>
+</form>
+<h1>Folders:</h1>
+  <% folders.forEach(function(folder) { %>
+    <ul>
+      <li> <%= folder.name %> </li>
+      <% if(folder.comment) { %>
+      <li> <%= folder.comment %> </li>
+      <% } %>
+    </ul>
+      <a href="/profile/folders/<%= folder.id %>/edit">Edit:</a>
+      <a href="/profile/folders/<%= folder.id %>">Enter:</a>
+      <br>
+      <form action="/profile/folders/<%= folder.id %>/delete" method="post" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+      <% }); %>
+<h1>Files:</h1>
+  <% files.forEach(function(file) { %>
+    <ul>
+      <li> <%= file.name %> </li>
+      <% if(file.comment) { %>
+      <li> <%= file.comment %> </li>
+      <% } %>
+      <form action="/profile/files/<%= file.id %>/download" method="post" style="display:inline;">
+        <button type="submit">Download</button>
+      </form>
+      <form action="/profile/files/<%= file.id %>/delete" method="post" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+
+    </ul>
+    <% }); %>
+    <h1>Upload more files</h1>
+    <form action="/uploads" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" />
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
