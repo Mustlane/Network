@@ -57,8 +57,6 @@
     "@types/express-session": "^1.18.2",
     "@types/multer": "^2.0.0",
     "@types/passport": "^1.0.17",
-    "@types/passport-local": "^1.0.38",
-    "nodemon": "^3.1.10",
-    "ts-node": "^10.9.2"
+    "@types/passport-local": "^1.0.38"
   }
 }

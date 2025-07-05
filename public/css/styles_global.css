@@ -1,16 +1,27 @@
 :root{
+    --body: #121616;
+
+    --userinfo_a: #fdfffd;
+    --userinfo_hover: #23d1a5;
+    --menu: #1daf8b;
+    --menu_hover: #00a280;
+
+    --searchbar_ul: #252f32;
+    --searchbar_input_bg: #1d2424;
+    --searchbar_font_focus: #818b84;
+
     --burger_width: 50px;
     --bg: #181a1b;
-    --wrapper: #121616;
     --text: #c6d2c8;
     --step_str: 0.12;
-    --menu: #00ad8a;
     --navbar: #252f32;
-    --navbar_ul: #1c2424;
     --minor_heading: #324041;
     --hover_brt: 106%;
     --active_brt: 112%;
     --content_alpha: 0.02;
+
+    --system_ui: "Segoe_UI";
+    --monospace_ui: "CascadiaCode";
 }
 
 
@@ -19,3 +30,7 @@
     src: url(../fonts/SegoeUI-VF.ttf);
 }
 
+@font-face{
+    font-family: "CascadiaCode";
+    src: url(../fonts/CascadiaCode.ttf);
+}

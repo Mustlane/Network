@@ -1,1 +1,153 @@
 @import url(styles_global.css);
+
+// GENERAL
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+  background-color: var(--body);
+  box-sizing: border-box;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0 8px;
+  font-family: var(--system_ui);
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 1020px;
+}
+
+// HEADER
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    img {
+        height: 75px;
+        padding: 20px 0 0 20px;
+    }
+}
+
+#userinfo {
+    margin-top: 20px;
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        gap: 10px;
+
+        li {
+            a, span {
+                font-size: 13px;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--userinfo_a);
+            }
+            span {
+                color: var(--text);
+            }
+
+            a:hover {
+                color: var(--userinfo_hover)
+            }
+        }
+    }
+}
+
+// NAVBAR
+
+#navbar {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+
+    div {
+        display: flex;
+        flex-direction: row;
+
+        ul {
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+    }
+
+// NAVBAR - MENU
+
+    #menu > ul {
+        width: 100%;
+    }
+
+    #menu > ul > li {
+        width: 100%;
+        background-color: var(--menu);
+    }
+
+    #menu li:not(#burger_li){
+        display: inline-block;
+        width: calc(20% - var(--burger_width) / 5);
+        text-align: center;
+        align-content: center;
+    }
+
+    #burger{
+        display: inline-block;
+        width: var(--burger_width);
+    }
+
+    $bg: #121616;
+
+    @for $i from 1 through 6 {
+        #menu li:nth-child(6n + #{$i}) {
+        background-color: hsla(0, 0%, 0%, calc((6 - $i)) * var(--step_str));
+  }}
+
+    #menu > ul > li > a {
+        text-decoration: none;
+    }
+
+// NAVBAR - SEARCHBARS
+
+    #searchbars {
+        background-color: var(--searchbar_ul);
+    }
+
+    #searchbars > ul {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 10px;
+        margin: 10px 10px;
+    }
+
+    #searchbars > ul > li {
+        display: inline-block;
+        flex: 1 1 auto;
+    }
+
+    #searchbars > ul > li > input {
+        width: 100%;
+        height: 28px;
+        border: none;
+        background-color: var(--searchbar_input_bg);
+        color: var(--text);
+    }
+
+    #searchbars > ul > li> input:focus {
+        background-color: var(--body);
+        outline: none;
+        color: var(--searchbar_font_focus);
+    }
+}
+
