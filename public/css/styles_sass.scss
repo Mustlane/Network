@@ -1,4 +1,4 @@
-@import url(styles_global.css);
+@use 'variables';
 
 // GENERAL
 
@@ -9,13 +9,13 @@
 }
 
 body {
-  background-color: var(--body);
+  background-color: variables.$body;
   box-sizing: border-box;
-  color: var(--text);
+  color: variables.$text;
   font-size: 12px;
   line-height: 1.6;
   margin: 0 8px;
-  font-family: var(--system_ui);
+  font-family: variables.$system_ui;
 }
 
 #wrapper {
@@ -53,14 +53,14 @@ header {
 
             a {
                 text-decoration: none;
-                color: var(--userinfo_a);
+                color: variables.$userinfo_a;
             }
             span {
-                color: var(--text);
+                color: variables.$text;
             }
 
             a:hover {
-                color: var(--userinfo_hover)
+                color: variables.$userinfo_hover
             }
         }
     }
@@ -90,28 +90,15 @@ header {
         width: 100%;
     }
 
+
     #menu > ul > li {
         width: 100%;
-        background-color: var(--menu);
+        background-color: variables.$menu;
     }
-
-    #menu li:not(#burger_li){
-        display: inline-block;
-        width: calc(20% - var(--burger_width) / 5);
-        text-align: center;
-        align-content: center;
-    }
-
-    #burger{
-        display: inline-block;
-        width: var(--burger_width);
-    }
-
-    $bg: #121616;
 
     @for $i from 1 through 6 {
         #menu li:nth-child(6n + #{$i}) {
-        background-color: hsla(0, 0%, 0%, calc((6 - $i)) * var(--step_str));
+        background-color: hsla(0, 0%, 0%, calc((6 - $i)) * variables.$step_str);
   }}
 
     #menu > ul > li > a {
@@ -121,7 +108,7 @@ header {
 // NAVBAR - SEARCHBARS
 
     #searchbars {
-        background-color: var(--searchbar_ul);
+        background-color: variables.$searchbar_ul;
     }
 
     #searchbars > ul {
@@ -140,14 +127,14 @@ header {
         width: 100%;
         height: 28px;
         border: none;
-        background-color: var(--searchbar_input_bg);
-        color: var(--text);
+        background-color: variables.$searchbar_input_bg;
+        color: variables.$text;
     }
 
     #searchbars > ul > li> input:focus {
-        background-color: var(--body);
+        background-color: variables.$body;
         outline: none;
-        color: var(--searchbar_font_focus);
+        color: variables.$searchbar_font_focus;
     }
 }
 

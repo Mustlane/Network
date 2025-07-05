@@ -1,17 +1,133 @@
-/* Error: Undefined operation "5 * var(--step_str)".
- *     ,
- * 114 |         background-color: hsla(0, 0%, 0%, calc((6 - $i)) * var(--step_str));
- *     |                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *     '
- *   public/css/styles_sass.scss 114:43  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: Undefined operation "5 * var(--step_str)".\a     \2577 \a 114 \2502          background-color: hsla(0, 0%, 0%, calc((6 - $i)) * var(--step_str));\a     \2502                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a     \2575 \a   public/css/styles_sass.scss 114:43  root stylesheet';
+@font-face {
+  font-family: "Segoe_UI";
+  src: url(../fonts/SegoeUI-VF.ttf);
 }
+@font-face {
+  font-family: "CascadiaCode";
+  src: url(../fonts/CascadiaCode.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #121616;
+  box-sizing: border-box;
+  color: #c6d2c8;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0 8px;
+  font-family: "Segoe_UI";
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1020px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+header img {
+  height: 75px;
+  padding: 20px 0 0 20px;
+}
+
+#userinfo {
+  margin-top: 20px;
+}
+#userinfo ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 10px;
+}
+#userinfo ul li a, #userinfo ul li span {
+  font-size: 13px;
+}
+#userinfo ul li a {
+  text-decoration: none;
+  color: #fdfffd;
+}
+#userinfo ul li span {
+  color: #c6d2c8;
+}
+#userinfo ul li a:hover {
+  color: #23d1a5;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+#navbar div {
+  display: flex;
+  flex-direction: row;
+}
+#navbar div ul {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+#navbar #menu > ul {
+  width: 100%;
+}
+#navbar #menu > ul > li {
+  width: 100%;
+  background-color: #00ad89;
+}
+#navbar #menu li:nth-child(6n+1) {
+  background-color: hsla(0, 0%, 0%, 0.6);
+}
+#navbar #menu li:nth-child(6n+2) {
+  background-color: hsla(0, 0%, 0%, 0.48);
+}
+#navbar #menu li:nth-child(6n+3) {
+  background-color: hsla(0, 0%, 0%, 0.36);
+}
+#navbar #menu li:nth-child(6n+4) {
+  background-color: hsla(0, 0%, 0%, 0.24);
+}
+#navbar #menu li:nth-child(6n+5) {
+  background-color: hsla(0, 0%, 0%, 0.12);
+}
+#navbar #menu li:nth-child(6n+6) {
+  background-color: hsla(0, 0%, 0%, 0);
+}
+#navbar #menu > ul > li > a {
+  text-decoration: none;
+}
+#navbar #searchbars {
+  background-color: #252f32;
+}
+#navbar #searchbars > ul {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  margin: 10px 10px;
+}
+#navbar #searchbars > ul > li {
+  display: inline-block;
+  flex: 1 1 auto;
+}
+#navbar #searchbars > ul > li > input {
+  width: 100%;
+  height: 28px;
+  border: none;
+  background-color: #1d2424;
+  color: #c6d2c8;
+}
+#navbar #searchbars > ul > li > input:focus {
+  background-color: #121616;
+  outline: none;
+  color: #818b84;
+}
+
+/*# sourceMappingURL=styles.css.map */
