@@ -1,5 +1,5 @@
 @use 'variables';
-
+@use 'sass:color';
 // GENERAL
 
 * {
@@ -94,15 +94,36 @@ header {
     #menu > ul > li {
         width: 100%;
         background-color: variables.$menu;
+        list-style: none;
     }
 
-    @for $i from 1 through 6 {
-        #menu li:nth-child(6n + #{$i}) {
-        background-color: hsla(0, 0%, 0%, calc((6 - $i)) * variables.$step_str);
-  }}
+@for $i from 1 through 7 {
+    #menu > ul > li:nth-child(7n - #{$i}) {
+        background-color: darken($color: variables.$menu, $amount: variables.$step_str * $i);
+    }}
 
     #menu > ul > li > a {
+        display: block;
+        height: 100%;
         text-decoration: none;
+        text-align: center;
+        line-height: 50px;
+        font-size: 13px;
+        font-weight: 900;
+        color: variables.$text;
+    
+    }
+
+    #menu > ul > li > a:hover {
+        background-color: variables.$menu_a_hover;
+    }
+
+    #menu > ul > li > a:active {
+        background-color: variables.$menu_a_active;
+    }
+
+    #menu > ul > li > div > a {
+        display: none;
     }
 
 // NAVBAR - SEARCHBARS

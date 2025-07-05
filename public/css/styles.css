@@ -81,28 +81,48 @@ header img {
 }
 #navbar #menu > ul > li {
   width: 100%;
-  background-color: #00ad89;
+  background-color: hsl(168, 100%, 34%);
+  list-style: none;
 }
-#navbar #menu li:nth-child(6n+1) {
-  background-color: hsla(0, 0%, 0%, 0.6);
+#navbar #menu > ul > li:nth-child(7n-1) {
+  background-color: hsl(168, 100%, 31%);
 }
-#navbar #menu li:nth-child(6n+2) {
-  background-color: hsla(0, 0%, 0%, 0.48);
+#navbar #menu > ul > li:nth-child(7n-2) {
+  background-color: hsl(168, 100%, 28%);
 }
-#navbar #menu li:nth-child(6n+3) {
-  background-color: hsla(0, 0%, 0%, 0.36);
+#navbar #menu > ul > li:nth-child(7n-3) {
+  background-color: hsl(168, 100%, 25%);
 }
-#navbar #menu li:nth-child(6n+4) {
-  background-color: hsla(0, 0%, 0%, 0.24);
+#navbar #menu > ul > li:nth-child(7n-4) {
+  background-color: hsl(168, 100%, 22%);
 }
-#navbar #menu li:nth-child(6n+5) {
-  background-color: hsla(0, 0%, 0%, 0.12);
+#navbar #menu > ul > li:nth-child(7n-5) {
+  background-color: hsl(168, 100%, 19%);
 }
-#navbar #menu li:nth-child(6n+6) {
-  background-color: hsla(0, 0%, 0%, 0);
+#navbar #menu > ul > li:nth-child(7n-6) {
+  background-color: hsl(168, 100%, 16%);
+}
+#navbar #menu > ul > li:nth-child(7n-7) {
+  background-color: hsl(168, 100%, 13%);
 }
 #navbar #menu > ul > li > a {
+  display: block;
+  height: 100%;
   text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  font-size: 13px;
+  font-weight: 900;
+  color: #c6d2c8;
+}
+#navbar #menu > ul > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+#navbar #menu > ul > li > a:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#navbar #menu > ul > li > div > a {
+  display: none;
 }
 #navbar #searchbars {
   background-color: #252f32;

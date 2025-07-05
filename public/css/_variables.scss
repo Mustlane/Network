@@ -1,16 +1,20 @@
 $body: #121616;
+
 $userinfo_a: #fdfffd;
 $userinfo_hover: #23d1a5;
-$menu: #00ad89;
-$menu_hover: #00a280;
+
+$menu: hsl(168, 100%, 34%);
+$menu_a_hover: rgba(255, 255, 255, 0.25);
+$menu_a_active: rgba(255, 255, 255, 0.4);
+
 $searchbar_ul: #252f32;
 $searchbar_input_bg: #1d2424;
 $searchbar_font_focus: #818b84;
+
 $burger_width: 50px;
 $bg: #181a1b;
 $text: #c6d2c8;
-$step_str: 0.12;
-$navbar: #252f32;
+$step_str: 3;
 $minor_heading: #324041;
 $hover_brt: 106%;
 $active_brt: 112%;
